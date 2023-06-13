@@ -5,7 +5,12 @@
     password: admin
     url: http://172.31.93.88:8080
   register: jenkins_job_status
-    
+
+- name: Debug
+  debug:
+    msg: "{{jenkins_job_status}}"
+
+
 - name: Copy Xml File
   ansible.builtin.template:
     src: sjob.xml
