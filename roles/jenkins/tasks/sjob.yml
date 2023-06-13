@@ -7,12 +7,11 @@
   register: jenkins_job_status
   ignore_errors: true
 
-
 - name: Copy Xml File
   ansible.builtin.template:
     src: sjob.xml
     dest: test.xml
-  when:  jenkins_job_status.failed or override
+  when: jenkins_job_status.failed or override
 
 - name: Create Jenkins Jobs
   community.general.jenkins_job:
@@ -21,4 +20,4 @@
     password: admin
     url: http://172.31.93.88:8080
     user: admin
-  when:  jenkins_job_status.failed or override
+  when: jenkins_job_status.failed or override
