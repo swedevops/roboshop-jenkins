@@ -5,3 +5,9 @@ sjobs:
 
 mjobs:
   - { git_repo_url: https://github.com/swedevops/cart.git, job_name: cart }
+  - { git_repo_url: https://github.com/swedevops/catalogue.git, job_name: catalogue }
+  - { git_repo_url: https://github.com/swedevops/user.git, job_name: user }
+  - { git_repo_url: https://github.com/swedevops/shipping.git, job_name: shipping }
+  - { git_repo_url: https://github.com/swedevops/payment.git, job_name: payment }
+  - { git_repo_url: https://github.com/swedevops/dispatch.git, job_name: dispatch }
+
