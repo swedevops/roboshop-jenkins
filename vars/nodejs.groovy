@@ -50,7 +50,7 @@ def call() {
                 }
                 steps  {
                     sh 'env'
-                    sh 'echo Release Application'
+                    sh 'curl -v -u admin:admin --upload-file server.js http://172.31.86.184:8081/repository/cart/1.0/server.js'
                 }
 
             }
