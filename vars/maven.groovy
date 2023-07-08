@@ -62,7 +62,7 @@ def call() {
                     sh 'echo $TAG_NAME >VERSION'
                     sh 'if [ -n "${schema_dir}" ]; then  aws ssm put-parameter --name "${component}.schema.checksum" --type "String" --value "$(md5sum schema/*.sql | awk "{print \\$1}")" --overwrite; fi '
                     sh 'zip -r ${component}-${TAG_NAME}.zip ${component}.jar VERSION ${schema_dir}'
-                    sh 'curl -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file ${component}-${TAG_NAME}.zip http://172.31.95.179:8081/repository/${component}/${component}-${TAG_NAME}.zip'
+                    sh 'curl -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file ${component}-${TAG_NAME}.zip http://172.31.82.58:8081/repository/${component}/${component}-${TAG_NAME}.zip'
                 }
 
             }
