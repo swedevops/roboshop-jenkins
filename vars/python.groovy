@@ -57,9 +57,9 @@ def call() {
                     sh 'echo $TAG_NAME >VERSION'
                    // sh 'zip -r ${component}-${TAG_NAME}.zip *.ini *.py *.txt VERSION ${schema_dir}'
                    // sh 'curl -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file ${component}-${TAG_NAME}.zip http://172.31.82.58:8081/repository/${component}/${component}-${TAG_NAME}.zip'
-                    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 494970943538.dkr.ecr.us-east-1.amazonaws.com'
-                    sh 'docker build -t 494970943538.dkr.ecr.us-east-1.amazonaws.com/${component}:${TAG_NAME} .'
-                    sh 'docker push 494970943538.dkr.ecr.us-east-1.amazonaws.com/${component}:${TAG_NAME}'
+                    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 283181175075.dkr.ecr.us-east-1.amazonaws.com'
+                    sh 'docker build -t 283181175075.dkr.ecr.us-east-1.amazonaws.com/${component}:${TAG_NAME} .'
+                    sh 'docker push 283181175075.dkr.ecr.us-east-1.amazonaws.com/${component}:${TAG_NAME}'
                 }
 
             }
